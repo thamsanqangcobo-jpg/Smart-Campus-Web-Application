@@ -1,0 +1,63 @@
+﻿@page
+@model SmartCampusPortal.Pages.ChatModel
+@{
+    ViewData["Title"] = "NovaHub Chat";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mb-4">NovaHub ChatRoom</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group">
+                <label for="userInput">Your Name:</label>
+                <input type="text" class="form-control" id="userInput" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <div class="border rounded p-3 bg-light" style="height: 400px; overflow-y: auto;" id="messagesList">
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-10">
+            <input type="text" class="form-control" id="messageInput" placeholder="Type your message..." />
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary w-100" id="sendButton">Send</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+}
+
+<style>
+    html {
+        font-size: 14px;
+    }
+
+    .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+        box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    }
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+ 
+
+    body {
+        margin-bottom: 60px;
+    }
+</style>

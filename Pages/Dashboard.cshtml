@@ -1,0 +1,21 @@
+﻿@page
+@model SmartCampusPortal.Pages.DashboardModel
+@using System.Security.Claims
+
+<div class="dashboard-container">
+    <h1>User Dashboard</h1>
+    <p class="welcome-message">Welcome, @Model.FullName!</p>
+
+    <div class="user-details-card">
+        <h2>Your Details</h2>
+        <p><span class="detail-label">Email:</span> @User.FindFirst(ClaimTypes.Email)?.Value</p>
+        <p><span class="detail-label">Full Name:</span> @Model.FullName</p>
+        <p><span class="detail-label">Registration Date:</span> @Model.RegistrationDate.ToShortDateString()</p>
+        <p>
+            <span class="detail-label">Account Status:</span>
+            <span class="@((Model.IsActive ? "active-status" : "inactive-status"))">
+                @(Model.IsActive ? "Active" : "Inactive")
+            </span>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@page
+@model SmartCampusPortal.Pages.Sos.CreateModel
+
+<h2>Create Incident Report</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="IncidentReport.IncidentType"></label>
+        <input asp-for="IncidentReport.IncidentType" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IncidentReport.Description"></label>
+        <input asp-for="IncidentReport.Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IncidentReport.Location"></label>
+        <input asp-for="IncidentReport.Location" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IncidentReport.ReportDate"></label>
+        <input asp-for="IncidentReport.ReportDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IncidentReport.Status"></label>
+        <input asp-for="IncidentReport.Status" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+
